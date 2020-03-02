@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href='{{url_for("static", filename="items_style.css")}}'>
+    <title>Inventory</title>
+</head>
+<head>Inventory:</head>
+<style>
+</style>
+<body>
+
+    <a href="https://www.youtube.com/watch?v=zjedLeVGcfE" target="_blank" >Music to play while using program</a>
+
+    <table>
+    <div class = "inputs"></div>
+        <form action="/Inventory" method="post">
+        <tr>
+            <th>Items name:</th>
+            <th>Items description:</th>
+            <th>Items statistics:</th>
+        </tr>
+            <h2>Enter a new item:</h2>
+        <tr>
+            <input type="text" name="inventory_name">
+            <input type="text" name="inventory_description">
+            <input type="string" name="inventory_stat">
+            <input type="submit" value="Add">
+        </tr>
+    </form>
+    </div>
+    </table>
+
+<table>
+        <tr>
+            <th>Name:</th>
+            <th>Description:</th>
+            <th>Statisttics:</th>
+        </tr>
+        {% for inventory in results %}
+        <tr>
+            <td>{{inventory[1]}} </td>
+            <td>{{inventory[2]}}</td>
+            <td>{{inventory[3]}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+</body>
+</html>
